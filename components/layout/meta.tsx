@@ -1,10 +1,10 @@
 import Head from "next/head";
 
-const DOMAIN = "https://fomo3d-frontend.vercel.app";
+const DOMAIN = "https://shopify-aave.vercel.app";
 
 export default function Meta({
-  title = "Fomo3D",
-  description = "Exit scam lottery game.",
+  title = "Shopify Aave",
+  description = "Create your own lending pool.",
   image = `${DOMAIN}/api/og`,
 }: {
   title?: string;
@@ -15,7 +15,7 @@ export default function Meta({
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link rel="icon" href="/favicon.ico" />
+      {/* <link rel="icon" href="/favicon.ico" /> */}
 
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
