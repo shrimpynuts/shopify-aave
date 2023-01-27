@@ -1,5 +1,8 @@
 import ms from "ms";
 
+export const shortenEthereumAddress = (address: string) =>
+  `${address.slice(0, 4)}...${address.slice(-3)}`;
+
 export const timeAgo = (timestamp: Date, timeOnly?: boolean): string => {
   if (!timestamp) return "never";
   return `${ms(Date.now() - new Date(timestamp).getTime())}${

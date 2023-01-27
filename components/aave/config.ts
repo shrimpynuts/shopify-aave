@@ -8,3 +8,4 @@ export const ShopifyAaveABIContract: {
   address,
   abi,
 };
+export const blockExplorer = "https://goerli.etherscan.io";

@@ -21,10 +21,8 @@ export default function Layout({
   return (
     <>
       <Meta {...meta} />
-      {/* bg-[#FDF1E4] */}
-      {/* bg-background-jpeg */}
       <div className="fixed h-screen w-screen bg-[#FDF1E4]" />
-      <div className="fixed h-screen w-screen bg-background-jpeg bg-auto opacity-40" />
+      {/* <div className="fixed h-screen w-screen bg-background-jpeg bg-auto opacity-40" /> */}
       <div
         className={`fixed top-0 w-full ${
           scrolled
@@ -35,9 +33,9 @@ export default function Layout({
       >
         <div className="mx-5 flex h-16 max-w-screen-xl items-center justify-between xl:mx-auto">
           <Link href="/" className="flex items-center font-display text-2xl">
-            <p className="ml-2 font-serif text-4xl font-extrabold text-gray-700">
-              Fomo3D
-            </p>
+            {/* <p className="ml-2 font-serif text-4xl font-extrabold text-gray-700">
+              Shopify Aave
+            </p> */}
           </Link>
           <div>
             <AnimatePresence>
