@@ -11,6 +11,7 @@ import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { WagmiConfig, createClient, configureChains, Chain } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import { lightTheme } from "@rainbow-me/rainbowkit";
+import { goerli } from "wagmi";
 
 import "@rainbow-me/rainbowkit/styles.css";
 
@@ -44,13 +45,13 @@ export const scroll: Chain = {
   },
 };
 
-const { chains, provider } = configureChains(
-  [scroll],
-  [
-    // alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API }),
-    publicProvider(),
-  ],
-);
+// First in array is "default"
+const configuredChains = [goerli];
+
+const { chains, provider } = configureChains(configuredChains, [
+  // alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API }),
+  publicProvider(),
+]);
 const { connectors } = getDefaultWallets({
   appName: "Fomo3D",
   chains,
@@ -76,7 +77,7 @@ export default function MyApp({
           overlayBlur: "small",
         })}
         chains={chains}
-        initialChain={scroll}
+        initialChain={configuredChains[0]}
       >
         <RWBProvider>
           <main className={cx(sfPro.variable, inter.variable)}>
