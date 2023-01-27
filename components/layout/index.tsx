@@ -21,7 +21,7 @@ export default function Layout({
   return (
     <>
       <Meta {...meta} />
-      <div className="fixed h-screen w-screen bg-gradient-to-r from-violet-300 to-violet-400" />
+      <div className="fixed h-screen w-screen bg-[#F1F1F3]" />
       {/* <div className="fixed h-screen w-screen bg-background-jpeg bg-auto opacity-40" /> */}
       <div
         className={`fixed top-0 w-full ${
