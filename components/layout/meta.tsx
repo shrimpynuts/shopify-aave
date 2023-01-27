@@ -1,9 +1,9 @@
 import Head from "next/head";
 
-const DOMAIN = "https://shopify-aave.vercel.app";
+const DOMAIN = "https://x-aave.vercel.app";
 
 export default function Meta({
-  title = "Shopify Aave",
+  title = "xAave",
   description = "Create your own lending pool.",
   image = `${DOMAIN}/api/og`,
 }: {

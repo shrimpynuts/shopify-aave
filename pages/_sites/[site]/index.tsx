@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
 import type { ParsedUrlQuery } from "querystring";
-import { ShopifyAaveABIContract } from "@/components/aave/config";
+import { DomainRegistryABIContract } from "@/components/aave/config";
 import { ethers } from "ethers";
 
 import SiteLayout from "@/components/aave/[site]/layout";
@@ -46,8 +46,8 @@ export const getServerSideProps: GetServerSideProps<
   );
 
   const DomainRegistryContract = new ethers.Contract(
-    ShopifyAaveABIContract.address,
-    ShopifyAaveABIContract.abi,
+    DomainRegistryABIContract.address,
+    DomainRegistryABIContract.abi,
     provider,
   );
   const owner = await DomainRegistryContract.domainToOwner(site);

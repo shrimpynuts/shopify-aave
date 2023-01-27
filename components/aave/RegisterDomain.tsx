@@ -1,14 +1,13 @@
 import { ethers } from "ethers";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   useAccount,
-  useContract,
   useContractRead,
   useContractWrite,
   usePrepareContractWrite,
 } from "wagmi";
 import {
-  ShopifyAaveABIContract,
+  DomainRegistryABIContract,
   blockExplorer,
 } from "@/components/aave/config";
 import toast, { Toaster } from "react-hot-toast";
@@ -23,7 +22,7 @@ export default function RegisterDomain({}: IRegisterDomainInterface) {
   const { openConnectModal } = useConnectModal();
 
   const { refetch, data, isFetched, isError } = useContractRead({
-    ...ShopifyAaveABIContract,
+    ...DomainRegistryABIContract,
     functionName: "domainToOwner",
     args: [domain],
     enabled: false,
@@ -35,7 +34,7 @@ export default function RegisterDomain({}: IRegisterDomainInterface) {
   console.log({ isRegistered, owner });
 
   const { config } = usePrepareContractWrite({
-    ...ShopifyAaveABIContract,
+    ...DomainRegistryABIContract,
     functionName: "register",
     args: [domain],
   });
