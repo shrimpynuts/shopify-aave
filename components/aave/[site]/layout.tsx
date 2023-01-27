@@ -28,10 +28,8 @@ export default function SiteLayout({
       <div className="fixed h-screen w-screen bg-[#2B2D3C]" />
       <div className="fixed my-72 h-screen w-screen bg-[#F1F1F3]" />
       <div
-        className={`fixed top-0 w-full border-b border-gray-500 ${
-          scrolled
-            ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
-            : "bg-white/0"
+        className={`fixed top-0 w-full border-b border-gray-500 bg-[#2B2D3C] ${
+          scrolled ? " backdrop-blur-xl" : "bg-white/0"
         } z-30 transition-all`}
       >
         <div className="flex h-16 max-w-screen-2xl items-center justify-between px-4 xl:mx-auto">
