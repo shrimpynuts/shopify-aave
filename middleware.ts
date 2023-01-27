@@ -58,7 +58,8 @@ export default async function middleware(req: NextRequest) {
   if (
     hostname === "localhost:3000" ||
     hostname === "shopify-aave.vercel.app" ||
-    hostname === "tokengate.xyz"
+    hostname === "tokengate.xyz" ||
+    hostname === "www.tokengate.xyz"
   ) {
     return NextResponse.rewrite(new URL(path, req.url));
   }
