@@ -88,49 +88,53 @@ export default function RegisterDomain({}: IRegisterDomainInterface) {
   const isLocalhost = process.env.NODE_ENV === "development";
 
   return (
-    <div className="relative mb-4 h-40 w-full rounded border border-gray-200 bg-white p-8 shadow-md">
-      <div className="flex justify-between">
-        <div>
-          <input
-            className="w-32 rounded-md border-gray-300"
-            type="text"
-            onChange={onChange}
-          />
-          <span className="ml-2 inline-block self-center">
-            .{isLocalhost ? "localhost:3000" : "tokengate.xyz"}
-          </span>
-        </div>
-        <div className="space-x-2">
-          {!isRegistered ? (
-            <button
-              className="rounded-md bg-[#EB7104] py-2 px-4 text-yellow-100"
-              onClick={onClick}
-            >
-              Register
-            </button>
-          ) : (
-            <a
-              href={
-                isLocalhost
-                  ? `http://${domain}.localhost:3000`
-                  : `https://${domain}.tokengate.xyz`
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="rounded-md bg-blue-600 py-2 px-4 text-yellow-100">
-                View
+    <div className="relative mb-4 w-full rounded border border-gray-200 bg-white p-8 shadow-md">
+      <h1 className="mb-8 text-2xl font-semibold">Register your domain</h1>
+
+      <div className="flex h-16 flex-col">
+        <div className="flex justify-between">
+          <div>
+            <input
+              className="w-32 rounded-md border-gray-300"
+              type="text"
+              onChange={onChange}
+            />
+            <span className="ml-2 inline-block self-center">
+              .{isLocalhost ? "localhost:3000" : "tokengate.xyz"}
+            </span>
+          </div>
+          <div className="space-x-2">
+            {!isRegistered ? (
+              <button
+                className="rounded-md bg-[#EB7104] py-2 px-4 text-yellow-100"
+                onClick={onClick}
+              >
+                Register
               </button>
-            </a>
-          )}
+            ) : (
+              <a
+                href={
+                  isLocalhost
+                    ? `http://${domain}.localhost:3000`
+                    : `https://${domain}.tokengate.xyz`
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="rounded-md bg-blue-600 py-2 px-4 text-yellow-100">
+                  View
+                </button>
+              </a>
+            )}
+          </div>
         </div>
+        {isRegistered && (
+          <div className="mt-2 flex space-x-1 text-red-600">
+            <p className="">This domain has already been registered by</p>
+            <Account address={owner} />.
+          </div>
+        )}
       </div>
-      {isRegistered && (
-        <div className="mt-2 flex space-x-1 text-red-600">
-          <p className="">This domain has been registered by</p>
-          <Account address={owner} />
-        </div>
-      )}
       <Toaster />
     </div>
   );
