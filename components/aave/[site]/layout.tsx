@@ -51,7 +51,7 @@ export default function SiteLayout({
           <div className="flex items-center space-x-4">
             <Link href="/" className="flex items-center font-display text-2xl">
               <p className="text-gradient-to-r ml-2 bg-gradient-to-r from-blue-300 to-pink-600 bg-clip-text font-mono text-xl font-extrabold text-transparent">
-                {site} - {shortenEthereumAddress(owner)}&apos;s lending pool
+                {site}&apos;s lending pool
               </p>
             </Link>
             <Link
