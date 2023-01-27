@@ -26,7 +26,7 @@ export default function SiteLayout({
     <>
       <Meta {...meta} />
       <div className="fixed h-screen w-screen bg-[#2B2D3C]" />
-      <div className="fixed my-72 h-screen w-screen bg-[#F1F1F3]" />
+      <div className="absolute mt-72 h-screen w-screen bg-[#F1F1F3]" />
       <div
         className={`fixed top-0 w-full border-b border-gray-500 bg-[#2B2D3C] ${
           scrolled ? " backdrop-blur-xl" : "bg-white/0"
