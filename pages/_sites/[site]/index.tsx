@@ -3,25 +3,24 @@ import type { ParsedUrlQuery } from "querystring";
 import { ShopifyAaveABIContract } from "@/components/aave/config";
 import { ethers } from "ethers";
 
-interface ISiteProps {
+import Layout from "@/components/layout";
+import NonSSRWrapper from "@/components/shared/no-ssr-wrapper";
+import AaveSite from "@/components/aave/[site]";
+
+export interface ISiteProps {
   site: string;
-  owner: string;
+  owner?: string;
 }
 
 interface IPathProps extends ParsedUrlQuery {}
 
 export default function Site({ site, owner }: ISiteProps) {
-  const isRegistered = owner !== ethers.constants.AddressZero;
   return (
-    <div>
-      {isRegistered ? (
-        <p>
-          Domain {site} is owned by {owner}
-        </p>
-      ) : (
-        <p>This domain is not registered yet.</p>
-      )}
-    </div>
+    <Layout>
+      <NonSSRWrapper>
+        <AaveSite site={site} owner={owner} />
+      </NonSSRWrapper>
+    </Layout>
   );
 }
 

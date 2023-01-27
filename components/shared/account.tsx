@@ -1,20 +1,19 @@
 import { shortenEthereumAddress } from "@/lib/utils";
 import Davatar from "@davatar/react";
 import { useProvider } from "wagmi";
+import { blockExplorer } from "@/components/aave/config";
 
 interface IAccountProps {
   address: string;
-  link: string;
 }
 
-export default function Account({ address, link }: IAccountProps) {
+export default function Account({ address }: IAccountProps) {
   const provider = useProvider();
-
   return (
     <div className="inline-block justify-center">
       <a
         className="flex space-x-1 transition duration-200 ease-in-out hover:scale-105 hover:cursor-pointer hover:text-blue-600"
-        href={link}
+        href={`${blockExplorer}/address/${address}`}
         target="_blank"
         rel="noopener noreferrer"
       >

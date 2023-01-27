@@ -116,7 +116,7 @@ export default function RegisterDomain({}: IRegisterDomainInterface) {
       {isRegistered && (
         <div className="mt-2 flex space-x-1 text-red-600">
           <p className="">This domain has been registered by</p>
-          <Account address={owner} link={`${blockExplorer}/address/${owner}`} />
+          <Account address={owner} />
         </div>
       )}
       <Toaster />
