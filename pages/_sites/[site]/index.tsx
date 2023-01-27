@@ -3,24 +3,31 @@ import type { ParsedUrlQuery } from "querystring";
 import { ShopifyAaveABIContract } from "@/components/aave/config";
 import { ethers } from "ethers";
 
-import Layout from "@/components/layout";
+import SiteLayout from "@/components/aave/[site]/layout";
 import NonSSRWrapper from "@/components/shared/no-ssr-wrapper";
 import AaveSite from "@/components/aave/[site]";
 
 export interface ISiteProps {
   site: string;
-  owner?: string;
+  owner: string;
+  isRegistered: boolean;
 }
 
 interface IPathProps extends ParsedUrlQuery {}
 
-export default function Site({ site, owner }: ISiteProps) {
+export default function Site({ site, owner, isRegistered }: ISiteProps) {
   return (
-    <Layout>
+    <SiteLayout
+      meta={{
+        title: site,
+        description: owner,
+      }}
+      data={{ site, owner, isRegistered }}
+    >
       <NonSSRWrapper>
-        <AaveSite site={site} owner={owner} />
+        <AaveSite data={{ site, owner, isRegistered }} />
       </NonSSRWrapper>
-    </Layout>
+    </SiteLayout>
   );
 }
 
@@ -44,11 +51,13 @@ export const getServerSideProps: GetServerSideProps<
     provider,
   );
   const owner = await DomainRegistryContract.domainToOwner(site);
+  const isRegistered = owner !== ethers.constants.AddressZero;
 
   return {
     props: {
       owner,
       site,
+      isRegistered,
     },
   };
 };
