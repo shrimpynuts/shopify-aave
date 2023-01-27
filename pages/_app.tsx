@@ -70,7 +70,7 @@ export default function MyApp({
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider
         theme={lightTheme({
-          accentColor: "#EB7104",
+          accentColor: "#374151",
           accentColorForeground: "white",
           fontStack: "system",
           borderRadius: "medium",

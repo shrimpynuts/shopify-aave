@@ -33,7 +33,7 @@ export default function Layout({
       >
         <div className="mx-5 flex h-16 max-w-screen-xl items-center justify-between xl:mx-auto">
           <Link href="/" className="flex items-center font-display text-2xl">
-            <p className="ml-2 font-serif text-4xl font-extrabold text-gray-700">
+            <p className="ml-2 font-serif text-4xl font-extrabold text-gray-800">
               xAave
             </p>
           </Link>
