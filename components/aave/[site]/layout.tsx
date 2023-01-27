@@ -22,10 +22,25 @@ export default function SiteLayout({
 }) {
   const scrolled = useScroll(50);
 
+  function randomColorFromString(str: string) {
+    for (
+      var i = 0, hash = 0;
+      i < str.length;
+      hash = str.charCodeAt(i++) + ((hash << 5) - hash)
+    );
+    let color = Math.floor(
+      Math.abs(((Math.sin(hash) * 10000) % 1) * 16777216),
+    ).toString(16);
+    return "#" + Array(6 - color.length + 1).join("0") + color;
+  }
+
   return (
     <>
       <Meta {...meta} />
-      <div className="fixed h-screen w-screen bg-[#2B2D3C]" />
+      <div
+        className={`fixed h-screen w-screen`}
+        style={{ backgroundColor: randomColorFromString(site) }}
+      />
       <div className="absolute mt-72 h-screen w-screen bg-[#F1F1F3]" />
       <div
         className={`fixed top-0 w-full border-b border-gray-500 bg-[#2B2D3C] ${
