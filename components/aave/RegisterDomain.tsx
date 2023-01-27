@@ -81,10 +81,10 @@ export default function RegisterDomain({}: IRegisterDomainInterface) {
     refetch();
   };
 
-  const origin =
-    typeof window !== "undefined" && window.location.host
-      ? window.location.host
-      : "";
+  // const origin =
+  //   typeof window !== "undefined" && window.location.host
+  //     ? window.location.host
+  //     : "";
   const isLocalhost = process.env.NODE_ENV === "development";
 
   return (
@@ -96,7 +96,9 @@ export default function RegisterDomain({}: IRegisterDomainInterface) {
             type="text"
             onChange={onChange}
           />
-          <span className="ml-2 inline-block self-center">.{origin}</span>
+          <span className="ml-2 inline-block self-center">
+            .{isLocalhost ? "localhost:3000" : "tokengate.xyz"}
+          </span>
         </div>
         <div className="space-x-2">
           {!isRegistered ? (
@@ -110,8 +112,8 @@ export default function RegisterDomain({}: IRegisterDomainInterface) {
             <a
               href={
                 isLocalhost
-                  ? `http://${domain}.${origin}`
-                  : `https://${domain}.${origin}`
+                  ? `http://${domain}.localhost:3000`
+                  : `https://${domain}.tokengate.xyz`
               }
               target="_blank"
               rel="noopener noreferrer"
