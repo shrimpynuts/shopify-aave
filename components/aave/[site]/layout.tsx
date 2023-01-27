@@ -45,33 +45,25 @@ export default function SiteLayout({
               href="/about"
               className="flex items-center font-display text-2xl"
             >
-              <p className="ml-2 font-mono text-sm font-extrabold text-gray-400">
-                About
-              </p>
+              <p className="ml-2 font-mono text-sm text-gray-200">About</p>
             </Link>
             <Link
               href="/about"
               className="flex items-center font-display text-2xl"
             >
-              <p className="ml-2 font-mono text-sm font-extrabold text-gray-400">
-                Markets
-              </p>
+              <p className="ml-2 font-mono text-sm text-gray-200">Markets</p>
             </Link>
             <Link
               href="/about"
               className="flex items-center font-display text-2xl"
             >
-              <p className="ml-2 font-mono text-sm font-extrabold text-gray-400">
-                Stake
-              </p>
+              <p className="ml-2 font-mono text-sm text-gray-200">Stake</p>
             </Link>
             <Link
               href="/about"
               className="flex items-center font-display text-2xl"
             >
-              <p className="ml-2 font-mono text-sm font-extrabold text-gray-400">
-                More
-              </p>
+              <p className="ml-2 font-mono text-sm text-gray-200">More</p>
             </Link>
           </div>
           <div>
