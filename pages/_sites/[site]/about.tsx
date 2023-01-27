@@ -1,21 +1,16 @@
+import { shortenEthereumAddress } from "@/lib/utils";
+import { IPathProps, ISiteProps } from "@/pages/_sites/[site]";
 import { GetServerSideProps } from "next";
-import type { ParsedUrlQuery } from "querystring";
-import { DomainRegistryABIContract } from "@/components/aave/config";
+import Davatar from "@davatar/react";
 import { ethers } from "ethers";
+import { useProvider } from "wagmi";
 
 import SiteLayout from "@/components/aave/[site]/layout";
 import NonSSRWrapper from "@/components/shared/no-ssr-wrapper";
-import AaveSite from "@/components/aave/[site]";
+import { DomainRegistryABIContract } from "@/components/aave/config";
+import AboutSite from "@/components/aave/[site]/about";
 
-export interface ISiteProps {
-  site: string;
-  owner: string;
-  isRegistered: boolean;
-}
-
-export interface IPathProps extends ParsedUrlQuery {}
-
-export default function Site({ site, owner, isRegistered }: ISiteProps) {
+export default function About({ site, owner, isRegistered }: ISiteProps) {
   return (
     <SiteLayout
       meta={{
@@ -25,7 +20,7 @@ export default function Site({ site, owner, isRegistered }: ISiteProps) {
       data={{ site, owner, isRegistered }}
     >
       <NonSSRWrapper>
-        <AaveSite data={{ site, owner, isRegistered }} />
+        <AboutSite data={{ site, owner, isRegistered }} />
       </NonSSRWrapper>
     </SiteLayout>
   );

@@ -34,12 +34,46 @@ export default function SiteLayout({
             : "bg-white/0"
         } z-30 transition-all`}
       >
-        <div className="mx-5 flex h-16 max-w-screen-2xl items-center justify-between xl:mx-auto">
-          <Link href="/" className="flex items-center font-display text-2xl">
-            <p className="ml-2 font-mono text-2xl font-extrabold text-gray-200">
-              {site} - {shortenEthereumAddress(owner)}&apos;s lending pool
-            </p>
-          </Link>
+        <div className="flex h-16 max-w-screen-2xl items-center justify-between px-4 xl:mx-auto">
+          <div className="flex items-center space-x-4">
+            <Link href="/" className="flex items-center font-display text-2xl">
+              <p className="text-gradient-to-r ml-2 bg-gradient-to-r from-blue-300 to-pink-600 bg-clip-text font-mono text-xl font-extrabold text-transparent">
+                {site} - {shortenEthereumAddress(owner)}&apos;s lending pool
+              </p>
+            </Link>
+            <Link
+              href="/about"
+              className="flex items-center font-display text-2xl"
+            >
+              <p className="ml-2 font-mono text-sm font-extrabold text-gray-400">
+                About
+              </p>
+            </Link>
+            <Link
+              href="/about"
+              className="flex items-center font-display text-2xl"
+            >
+              <p className="ml-2 font-mono text-sm font-extrabold text-gray-400">
+                Markets
+              </p>
+            </Link>
+            <Link
+              href="/about"
+              className="flex items-center font-display text-2xl"
+            >
+              <p className="ml-2 font-mono text-sm font-extrabold text-gray-400">
+                Stake
+              </p>
+            </Link>
+            <Link
+              href="/about"
+              className="flex items-center font-display text-2xl"
+            >
+              <p className="ml-2 font-mono text-sm font-extrabold text-gray-400">
+                More
+              </p>
+            </Link>
+          </div>
           <div>
             <AnimatePresence>
               <ConnectButton />
