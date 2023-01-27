@@ -52,10 +52,14 @@ export default async function middleware(req: NextRequest) {
   //   url.pathname = `/app${url.pathname}`;
   //   return NextResponse.rewrite(url);
   // }
-  console.log({ currentHost });
+  console.log({ currentHost, hostname });
 
   // rewrite root application to `/` folder
-  if (hostname === "localhost:3000" || hostname === "shopify-aave.vercel.app") {
+  if (
+    hostname === "localhost:3000" ||
+    hostname === "shopify-aave.vercel.app" ||
+    hostname === "tokengate.xyz"
+  ) {
     return NextResponse.rewrite(new URL(path, req.url));
   }
 
