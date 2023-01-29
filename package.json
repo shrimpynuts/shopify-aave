@@ -11,6 +11,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aave/contract-helpers": "^1.13.3",
+    "@aave/math-utils": "^1.13.3",
     "@davatar/react": "^1.11.1",
     "@next/font": "13.1.1",
     "@radix-ui/react-popover": "^1.0.2",
@@ -21,12 +23,14 @@
     "@types/react-dom": "18.0.10",
     "@vercel/analytics": "^0.1.6",
     "@vercel/og": "^0.0.26",
+    "bignumber.js": "^9.1.1",
     "classnames": "^2.3.2",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
     "ethers": "^5.7.2",
     "focus-trap-react": "^10.0.2",
     "framer-motion": "^8.4.2",
+    "immer": "^9.0.19",
     "lucide-react": "0.105.0-alpha.4",
     "moment": "^2.29.4",
     "ms": "^2.1.3",
@@ -38,9 +42,11 @@
     "react-hot-toast": "^2.4.0",
     "react-markdown": "^8.0.4",
     "react-wrap-balancer": "^0.3.0",
+    "reflect-metadata": "^0.1.13",
     "typescript": "4.9.4",
     "use-debounce": "^9.0.3",
-    "wagmi": "^0.10.10"
+    "wagmi": "^0.10.10",
+    "zustand": "^4.3.2"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",

@@ -14,6 +14,8 @@ import { lightTheme } from "@rainbow-me/rainbowkit";
 import { goerli } from "wagmi";
 
 import "@rainbow-me/rainbowkit/styles.css";
+import { AppDataProvider } from "hooks/app-data-provider/useAppDataProvider";
+import { BackgroundDataProvider } from "hooks/app-data-provider/BackgroundDataProvider";
 
 const sfPro = localFont({
   src: "../styles/SF-Pro-Display-Medium.otf",
@@ -79,12 +81,16 @@ export default function MyApp({
         chains={chains}
         initialChain={configuredChains[0]}
       >
-        <RWBProvider>
-          <main className={cx(sfPro.variable, inter.variable)}>
-            <Component {...pageProps} />
-          </main>
-          <Analytics />
-        </RWBProvider>
+        <BackgroundDataProvider>
+          <AppDataProvider>
+            <RWBProvider>
+              <main className={cx(sfPro.variable, inter.variable)}>
+                <Component {...pageProps} />
+              </main>
+              <Analytics />
+            </RWBProvider>
+          </AppDataProvider>
+        </BackgroundDataProvider>
       </RainbowKitProvider>
     </WagmiConfig>
   );

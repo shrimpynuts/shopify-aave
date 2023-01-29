@@ -1,8 +1,10 @@
-import { shortenEthereumAddress } from "@/lib/utils";
-import { ISiteProps } from "@/pages/_sites/[site]";
 import Davatar from "@davatar/react";
 import { ethers } from "ethers";
 import { useProvider } from "wagmi";
+
+import { shortenEthereumAddress } from "@/lib/utils";
+import { ISiteProps } from "@/pages/_sites/[site]";
+import Assets from "@/components/aave/[site]/assets";
 
 const Skeleton = ({ numRows }: { numRows: number }) => (
   <div
@@ -42,7 +44,7 @@ export default function AaveSite({
             </div>
             <div className="w-full rounded border border-gray-200 bg-white p-8 shadow-md">
               <h2 className="text-xl">Assets to supply</h2>
-              <Skeleton numRows={3} />
+              <Assets />
             </div>
             <div className="w-full rounded border border-gray-200 bg-white p-8 shadow-md">
               <h2 className="text-xl">Assets to borrow</h2>
